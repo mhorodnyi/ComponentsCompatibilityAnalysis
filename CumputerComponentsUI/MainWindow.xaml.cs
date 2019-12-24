@@ -24,13 +24,11 @@ namespace CumputerComponentsUI
     public partial class MainWindow : Window
     {
         private Assembly assembly;
-        private int counterOfCompolsaryComponents;
 
         public MainWindow()
         {
             InitializeComponent();
             assembly = new Assembly();
-            counterOfCompolsaryComponents = 0;
 
             using (ComputerComponentsEntities entities = new ComputerComponentsEntities())
             {
@@ -50,7 +48,6 @@ namespace CumputerComponentsUI
             if (MotherboardsList.SelectedItem is Motherboard)
             {
                 assembly.Motherboard = (Motherboard)MotherboardsList.SelectedItem;
-                counterOfCompolsaryComponents++;
                 CheckAssembly();
             }
         }
@@ -60,7 +57,6 @@ namespace CumputerComponentsUI
             if (CPUsList.SelectedItem is Processor)
             {
                 assembly.Processor = (Processor)CPUsList.SelectedItem;
-                counterOfCompolsaryComponents++;
                 CheckAssembly();
             }
         }
@@ -70,7 +66,6 @@ namespace CumputerComponentsUI
             if (MemoriesList.SelectedItem is Memory)
             {
                 assembly.Memory = (Memory)MemoriesList.SelectedItem;
-                counterOfCompolsaryComponents++;
                 CheckAssembly();
             }
         }
@@ -89,7 +84,6 @@ namespace CumputerComponentsUI
             if (PowerSuppliesList.SelectedItem is PowerSupply)
             {
                 assembly.PowerSupply = (PowerSupply)PowerSuppliesList.SelectedItem;
-                counterOfCompolsaryComponents++;
                 CheckAssembly();
             }
         }
@@ -123,10 +117,7 @@ namespace CumputerComponentsUI
 
         private void CheckAssembly()
         {
-            if (counterOfCompolsaryComponents >= 4)
-            {
-                Label.Content = assembly.IsAssemblyCompatibility() ? "It is fine" : "It is bad";
-            }
+             Label.Content = assembly.IsAssemblyCompatibility() ? "It is fine compatibility" : "It is bad compatibility";
         }
     }
 }
