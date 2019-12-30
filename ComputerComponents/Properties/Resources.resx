@@ -121,7 +121,7 @@
     <value>Please, start choose components</value>
   </data>
   <data name="CPUAndMotherboardProblems" xml:space="preserve">
-    <value>Please, select CPU or Motherboard with the same socket</value>
+    <value>Please, select CPU and Motherboard with the same socket</value>
   </data>
   <data name="FansSocketNotCompatibility" xml:space="preserve">
     <value>Please choose Fan with the same socket as CPU</value>
@@ -137,5 +137,8 @@
   </data>
   <data name="ThereAreNotGraphicalCores" xml:space="preserve">
     <value>Please, choose CPU with graphical core OR select GPU</value>
+  </data>
+  <data name="FansTDPSmallerThenCPUs" xml:space="preserve">
+    <value>It will be better if you choose Fan with bigger TDP then CPUs</value>
   </data>
 </root>

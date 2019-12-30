@@ -21,27 +21,29 @@ namespace ComputerComponents.Analyzer
 
         public string AssemblyCompatibilityMessage()
         {
-            string message = ComputerComponents.Properties.Resources.ItsFineAssembly;
+            string message = Properties.Resources.ItsFineAssembly;
 
             if (GraphicalCard != null && PowerSupply != null)
             {
                 message = GraphicalCard.MinPowerRequires <= PowerSupply.Power ?
-                    message : ComputerComponents.Properties.Resources.NotEnoughPowerOfPS;
+                    message : Properties.Resources.NotEnoughPowerOfPS;
             }
             else if (Processor != null)
             {
                 message = Processor.GraphicalCore.Replace(" ", "") == "+" ?
-                    message : ComputerComponents.Properties.Resources.ThereAreNotGraphicalCores;
+                    message : Properties.Resources.ThereAreNotGraphicalCores;
             }
             if (Motherboard != null && Processor != null)
             {
                 message = Motherboard.Socket == Processor.Socket ?
-                    message : ComputerComponents.Properties.Resources.CPUAndMotherboardProblems;
+                    message : Properties.Resources.CPUAndMotherboardProblems;
             }
             if (Fan != null && Processor != null)
             {
                 message = (Fan.Sockets.IndexOf(Processor.Socket.Replace(" ", "")) >= 0) ?
-                    message : ComputerComponents.Properties.Resources.FansSocketNotCompatibility;
+                    message : Properties.Resources.FansSocketNotCompatibility;
+                message = Processor.TDP <= Fan.TDP ?
+                    message : Properties.Resources.FansTDPSmallerThenCPUs;
             }
             return message;
         }

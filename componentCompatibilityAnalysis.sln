@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerComponents", "Compu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CumputerComponentsUI", "CumputerComponentsUI\CumputerComponentsUI.csproj", "{DDE473D6-1CA7-4F0E-893B-C6BEBAB1CF26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerComponentsTest", "ComputerComponentsTest\ComputerComponentsTest.csproj", "{4955C131-306A-44CA-8B35-00E43152DF63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerComponentsTests", "ComputerComponentsTest\ComputerComponentsTests.csproj", "{4955C131-306A-44CA-8B35-00E43152DF63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

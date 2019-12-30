@@ -70,7 +70,7 @@ namespace ComputerComponents.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please, select CPU or Motherboard with the same socket.
+        ///   Looks up a localized string similar to Please, select CPU and Motherboard with the same socket.
         /// </summary>
         internal static string CPUAndMotherboardProblems {
             get {
@@ -84,6 +84,15 @@ namespace ComputerComponents.Properties {
         internal static string FansSocketNotCompatibility {
             get {
                 return ResourceManager.GetString("FansSocketNotCompatibility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It will be better if you choose Fan with bigger TDP then CPUs.
+        /// </summary>
+        internal static string FansTDPSmallerThenCPUs {
+            get {
+                return ResourceManager.GetString("FansTDPSmallerThenCPUs", resourceCulture);
             }
         }
         
