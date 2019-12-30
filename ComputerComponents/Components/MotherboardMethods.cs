@@ -9,6 +9,23 @@ namespace ComputerComponents.Models
 {
     partial class Motherboard : IComponent, IWritable
     {
+        public Motherboard()
+        {
+            this.Chipset = "";
+            this.Coast = 0;
+            this.Name = "";
+            this.Socket = "";
+            this.Vendor = "";
+        }
+         public Motherboard(string vendor, string name, string chipset, string socket, decimal coast)
+        {
+            this.Chipset = chipset;
+            this.Coast = coast;
+            this.Name = name;
+            this.Socket = socket;
+            this.Vendor = vendor;
+        }
+
         public void WriteNewRecord()
         {
             using (ComputerComponentsEntities context = new ComputerComponentsEntities())

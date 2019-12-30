@@ -19,25 +19,31 @@ namespace ComputerComponents.Analyzer
         public HDD HDD { get; set; }
         public SSD SSD { get; set; }
 
-        public bool IsAssemblyCompatibility()
+        public string AssemblyCompatibilityMessage()
         {
-            bool Compatibility = true;
-            if (Motherboard != null &&
-                Processor != null &&
-                Memory != null &&
-                PowerSupply != null)
+            string message = ComputerComponents.Properties.Resources.ItsFineAssembly;
+
+            if (GraphicalCard != null && PowerSupply != null)
             {
-                if (GraphicalCard != null)
-                {
-                    Compatibility = Compatibility && GraphicalCard.MinPowerRequires <= PowerSupply.Power;
-                } else
-                {
-                    Compatibility = Compatibility && Processor.GraphicalCore.Replace(" ", "") == "+";
-                }
-                Compatibility = Compatibility && Motherboard.Socket == Processor.Socket;
-                Compatibility = Compatibility && (Fan != null ? Fan.Sockets.IndexOf(Processor.Socket.Replace(" ", "")) >= 0 : true);
+                message = GraphicalCard.MinPowerRequires <= PowerSupply.Power ?
+                    message : ComputerComponents.Properties.Resources.NotEnoughPowerOfPS;
             }
-            return Compatibility;
+            else if (Processor != null)
+            {
+                message = Processor.GraphicalCore.Replace(" ", "") == "+" ?
+                    message : ComputerComponents.Properties.Resources.ThereAreNotGraphicalCores;
+            }
+            if (Motherboard != null && Processor != null)
+            {
+                message = Motherboard.Socket == Processor.Socket ?
+                    message : ComputerComponents.Properties.Resources.CPUAndMotherboardProblems;
+            }
+            if (Fan != null && Processor != null)
+            {
+                message = (Fan.Sockets.IndexOf(Processor.Socket.Replace(" ", "")) >= 0) ?
+                    message : ComputerComponents.Properties.Resources.FansSocketNotCompatibility;
+            }
+            return message;
         }
     }
 }
