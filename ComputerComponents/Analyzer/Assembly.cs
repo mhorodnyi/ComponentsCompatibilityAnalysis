@@ -28,7 +28,7 @@ namespace ComputerComponents.Analyzer
                 message = GraphicalCard.MinPowerRequires <= PowerSupply.Power ?
                     message : Properties.Resources.NotEnoughPowerOfPS;
             }
-            else if (Processor != null)
+            if (Processor != null && GraphicalCard == null)
             {
                 message = Processor.GraphicalCore.Replace(" ", "") == "+" ?
                     message : Properties.Resources.ThereAreNotGraphicalCores;

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CumputerComponentsUI"
         mc:Ignorable="d"
-        Title="Computer Components Analyzer" Height="294.742" Width="800">
+        Title="Computer Components Analyzer" Height="294.742" Width="667.453">
     <Grid Margin="0,0,0,3">
         <Label Content="Motherboard:" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top"/>
         <Label Content="CPU:" HorizontalAlignment="Left" Margin="59,37,0,0" VerticalAlignment="Top"/>
@@ -15,7 +15,6 @@
         <Label Content="Fan:" HorizontalAlignment="Left" Margin="64,145,0,0" VerticalAlignment="Top"/>
         <Label Content="HDD:" HorizontalAlignment="Left" Margin="57,172,0,0" VerticalAlignment="Top"/>
         <Label Content="SSD:" HorizontalAlignment="Left" Margin="61,198,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label" Content="Please, start choose components" HorizontalAlignment="Left" Margin="522,10,0,0" VerticalAlignment="Top" Width="186" Height="80"/>
         <ComboBox x:Name="MotherboardsList" HorizontalAlignment="Left" Margin="99,14,0,0" VerticalAlignment="Top" Width="371" DropDownClosed="MotherboardsList_DropDownClosed"/>
         <ComboBox x:Name="CPUsList" HorizontalAlignment="Left" Margin="99,41,0,0" VerticalAlignment="Top" Width="371" DropDownClosed="CPUsList_DropDownClosed"/>
         <ComboBox x:Name="SSDsList" HorizontalAlignment="Left" Margin="99,203,0,0" VerticalAlignment="Top" Width="371" DropDownClosed="SSDsList_DropDownClosed"/>
@@ -24,6 +23,7 @@
         <ComboBox x:Name="PowerSuppliesList" HorizontalAlignment="Left" Margin="99,122,0,0" VerticalAlignment="Top" Width="371" DropDownClosed="PowerSuppliesList_DropDownClosed"/>
         <ComboBox x:Name="FansList" HorizontalAlignment="Left" Margin="99,149,0,0" VerticalAlignment="Top" Width="371" DropDownClosed="FansList_DropDownClosed"/>
         <ComboBox x:Name="HDDsList" HorizontalAlignment="Left" Margin="99,176,0,0" VerticalAlignment="Top" Width="371" DropDownClosed="HDDsList_DropDownClosed"/>
+        <TextBlock x:Name="Message" HorizontalAlignment="Left" Margin="493,14,0,0" TextWrapping="Wrap" Text="Please, choose components" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>

@@ -117,7 +117,7 @@ namespace CumputerComponentsUI
 
         private void CheckAssembly()
         {
-             Label.Content = assembly.AssemblyCompatibilityMessage();
+             Message.Text = assembly.AssemblyCompatibilityMessage();
         }
     }
 }
