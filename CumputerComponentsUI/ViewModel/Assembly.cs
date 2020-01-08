@@ -12,9 +12,9 @@ namespace CumputerComponentsUI.ViewModel
     public static class Assembly
     {
         public static Motherboard Motherboard { get; set; }
-        public static Processor Processor { get; set; }
+        public static Processor CPU { get; set; }
         public static Memory Memory { get; set; }
-        public static GraphicalCard GraphicalCard { get; set; }
+        public static GraphicalCard GPU { get; set; }
         public static PowerSupply PowerSupply { get; set; }
         public static Fan Fan { get; set; }
         public static HDD HDD { get; set; }
@@ -24,26 +24,26 @@ namespace CumputerComponentsUI.ViewModel
         {
             string message = ProjectResources.ItsFineAssembly;
 
-            if (GraphicalCard != null && PowerSupply != null)
+            if (GPU != null && PowerSupply != null)
             {
-                message = GraphicalCard.MinPowerRequires <= PowerSupply.Power ?
+                message = GPU.MinPowerRequires <= PowerSupply.Power ?
                     message : ProjectResources.NotEnoughPowerOfPS;
             }
-            if (Processor != null && GraphicalCard == null)
+            if (CPU != null && GPU == null)
             {
-                message = Processor.GraphicalCore.Replace(" ", "") == "+" ?
+                message = CPU.GraphicalCore.Replace(" ", "") == "+" ?
                     message : ProjectResources.ThereAreNotGraphicalCores;
             }
-            if (Motherboard != null && Processor != null)
+            if (Motherboard != null && CPU != null)
             {
-                message = Motherboard.Socket == Processor.Socket ?
+                message = Motherboard.Socket == CPU.Socket ?
                     message : ProjectResources.CPUAndMotherboardProblems;
             }
-            if (Fan != null && Processor != null)
+            if (Fan != null && CPU != null)
             {
-                message = (Fan.Sockets.IndexOf(Processor.Socket.Replace(" ", "")) >= 0) ?
+                message = (Fan.Sockets.IndexOf(CPU.Socket.Replace(" ", "")) >= 0) ?
                     message : ProjectResources.FansSocketNotCompatibility;
-                message = Processor.TDP <= Fan.TDP ?
+                message = CPU.TDP <= Fan.TDP ?
                     message : ProjectResources.FansTDPSmallerThenCPUs;
             }
             return message;

@@ -1,17 +1,9 @@
-﻿using System;
+﻿using CumputerComponentsUI.ViewModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CumputerComponentsUI.ViewModel;
 using SSDModel = ComputerComponents.Models.SSD;
 using SSDView = CumputerComponentsUI.Views.Components.SSD;
 
@@ -29,29 +21,38 @@ namespace CumputerComponentsUI.Views.Windows
             SSDs = ComponentsCollections.SSDs;
 
             int i = 0;
-            foreach (SSDModel cpu in SSDs)
+            foreach (SSDModel ssd in SSDs)
             {
-                SSDView CPUView = new SSDView
+                SSDView SSDView = new SSDView
                 {
-                    DataContext = cpu,
+                    DataContext = ssd,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
-                SSDGrid.Children.Add(CPUView);
-                CPUView.ComponentData.DataContext = cpu;
+                SSDGrid.Children.Add(SSDView);
+                SSDView.ComponentData.DataContext = ssd;
+                SSDView.MouseDoubleClick += getSSD;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
                 SSDGrid.RowDefinitions.Add(newRow);
 
-                Grid.SetRow(CPUView, i);
-                Grid.SetColumn(CPUView, 0);
+                Grid.SetRow(SSDView, i);
+                Grid.SetColumn(SSDView, 0);
 
                 i++;
             }
         }
 
         private List<SSDModel> SSDs;
+
+        private void getSSD(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.SSD = (SSDModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }

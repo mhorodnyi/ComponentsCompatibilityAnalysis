@@ -35,11 +35,14 @@ namespace CumputerComponentsUI.Views.Windows
                 {
                     DataContext = cpu,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
                 FanGrid.Children.Add(FanView);
                 FanView.ComponentData.DataContext = cpu;
+                FanView.MouseDoubleClick += getFan;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
@@ -53,5 +56,11 @@ namespace CumputerComponentsUI.Views.Windows
         }
 
         private List<FanModel> Fans;
+
+        private void getFan(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.Fan = (FanModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }

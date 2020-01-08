@@ -35,11 +35,14 @@ namespace CumputerComponentsUI.Views.Windows
                 {
                     DataContext = memory,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
                 MemoryGrid.Children.Add(MemoryView);
                 MemoryView.ComponentData.DataContext = memory;
+                MemoryView.MouseDoubleClick += getMemory;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
@@ -53,5 +56,11 @@ namespace CumputerComponentsUI.Views.Windows
         }
 
         private List<MemoryModel> Memories;
+
+        private void getMemory(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.Memory = (MemoryModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }

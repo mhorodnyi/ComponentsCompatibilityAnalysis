@@ -28,8 +28,6 @@ namespace CumputerComponentsUI.Views.Windows
             InitializeComponent();
 
             Motherboards = ComponentsCollections.Motherboards;
-            Motherboards.Add(new MotherboardModel("ASRock", "Phantom Gaming 6", "Z390", "LGA1151", 200));
-            Motherboards.Add(new MotherboardModel("Asus", "STRIX", "B450", "AM4", 600));
 
             int i = 0;
             foreach (MotherboardModel motherboard in Motherboards)

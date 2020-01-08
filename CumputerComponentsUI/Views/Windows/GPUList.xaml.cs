@@ -35,11 +35,14 @@ namespace CumputerComponentsUI.Views.Windows
                 {
                     DataContext = gpu,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
                 GPUGrid.Children.Add(GPUView);
                 GPUView.ComponentData.DataContext = gpu;
+                GPUView.MouseDoubleClick += getGPU;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
@@ -53,5 +56,11 @@ namespace CumputerComponentsUI.Views.Windows
         }
 
         private List<GPUModel> GPUs;
+
+        private void getGPU(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.GPU = (GPUModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }

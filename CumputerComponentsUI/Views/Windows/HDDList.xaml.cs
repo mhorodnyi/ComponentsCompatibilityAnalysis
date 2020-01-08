@@ -29,17 +29,20 @@ namespace CumputerComponentsUI.Views.Windows
             HDDs = ComponentsCollections.HDDs;
 
             int i = 0;
-            foreach (HDDModel cpu in HDDs)
+            foreach (HDDModel hdd in HDDs)
             {
                 HDDView HDDView = new HDDView
                 {
-                    DataContext = cpu,
+                    DataContext = hdd,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
                 HDDGrid.Children.Add(HDDView);
-                HDDView.ComponentData.DataContext = cpu;
+                HDDView.ComponentData.DataContext = hdd;
+                HDDView.MouseDoubleClick += getHDD;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
@@ -53,5 +56,11 @@ namespace CumputerComponentsUI.Views.Windows
         }
 
         private List<HDDModel> HDDs;
+
+        private void getHDD(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.HDD = (HDDModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }

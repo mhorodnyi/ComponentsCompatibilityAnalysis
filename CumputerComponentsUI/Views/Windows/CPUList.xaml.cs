@@ -35,11 +35,14 @@ namespace CumputerComponentsUI.Views.Windows
                 {
                     DataContext = cpu,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
                 CPUGrid.Children.Add(CPUView);
                 CPUView.ComponentData.DataContext = cpu;
+                CPUView.MouseDoubleClick += getCPU;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
@@ -53,5 +56,11 @@ namespace CumputerComponentsUI.Views.Windows
         }
 
         private List<CPUModel> CPUs;
+
+        private void getCPU(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.CPU = (CPUModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }

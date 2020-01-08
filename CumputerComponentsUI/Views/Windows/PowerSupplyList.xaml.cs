@@ -35,11 +35,14 @@ namespace CumputerComponentsUI.Views.Windows
                 {
                     DataContext = ps,
                     Height = 120,
-                    Width = 400
+                    Width = 400,
+                    Background = Brushes.LightYellow,
+                    Margin = new Thickness(10, 10, 0, 0)
                 };
 
                 PowerSupplyGrid.Children.Add(PowerSupplyView);
                 PowerSupplyView.ComponentData.DataContext = ps;
+                PowerSupplyView.MouseDoubleClick += getPS;
 
                 RowDefinition newRow = new RowDefinition();
                 newRow.Height = new GridLength(120);
@@ -53,5 +56,11 @@ namespace CumputerComponentsUI.Views.Windows
         }
 
         private List<PowerSupplyModel> PowerSupplies;
+
+        private void getPS(object sender, MouseButtonEventArgs e)
+        {
+            Assembly.PowerSupply = (PowerSupplyModel)((UserControl)sender).DataContext;
+            this.Close();
+        }
     }
 }
