@@ -48,5 +48,17 @@ namespace CumputerComponentsUI.ViewModel
             }
             return message;
         }
+
+        public static void Clear()
+        {
+            Motherboard = null;
+            CPU = null;
+            GPU = null;
+            Memory = null;
+            PowerSupply = null;
+            Fan = null;
+            HDD = null;
+            SSD = null;
+        }
     }
 }
