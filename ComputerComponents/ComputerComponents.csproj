@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzer\Assembly.cs" />
     <Compile Include="Components\FanMethods.cs" />
     <Compile Include="Components\GraphicalCardMethods.cs" />
     <Compile Include="Components\HDDMethods.cs" />

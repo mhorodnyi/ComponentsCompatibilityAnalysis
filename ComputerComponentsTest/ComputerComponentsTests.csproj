@@ -60,6 +60,10 @@
       <Project>{e46560d4-c9a2-421c-8809-a7213ae08525}</Project>
       <Name>ComputerComponents</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CumputerComponentsUI\CumputerComponentsUI.csproj">
+      <Project>{dde473d6-1ca7-4f0e-893b-c6bebab1cf26}</Project>
+      <Name>CumputerComponentsUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

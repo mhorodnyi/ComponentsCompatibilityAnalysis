@@ -63,6 +63,59 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Assembly.cs" />
+    <Compile Include="ViewModel\ComponentsCollections.cs" />
+    <Compile Include="Views\Components\ComponentMainView.xaml.cs">
+      <DependentUpon>ComponentMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\CPU.xaml.cs">
+      <DependentUpon>CPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Fan.xaml.cs">
+      <DependentUpon>Fan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\GPU.xaml.cs">
+      <DependentUpon>GPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\HDD.xaml.cs">
+      <DependentUpon>HDD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Memory.xaml.cs">
+      <DependentUpon>Memory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Motherboard.xaml.cs">
+      <DependentUpon>Motherboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\PowerSupply.xaml.cs">
+      <DependentUpon>PowerSupply.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\SSD.xaml.cs">
+      <DependentUpon>SSD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\CPUList.xaml.cs">
+      <DependentUpon>CPUList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\FanList.xaml.cs">
+      <DependentUpon>FanList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\GPUList.xaml.cs">
+      <DependentUpon>GPUList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\HDDList.xaml.cs">
+      <DependentUpon>HDDList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\MemoryList.xaml.cs">
+      <DependentUpon>MemoryList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\MotherboardsList.xaml.cs">
+      <DependentUpon>MotherboardsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\PowerSupplyList.xaml.cs">
+      <DependentUpon>PowerSupplyList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\SSDList.xaml.cs">
+      <DependentUpon>SSDList.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,6 +128,74 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Components\ComponentMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\CPU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\Fan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\GPU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\HDD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\Memory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\Motherboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\PowerSupply.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Components\SSD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\CPUList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\FanList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\GPUList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\HDDList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\MemoryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\MotherboardsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\PowerSupplyList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\SSDList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

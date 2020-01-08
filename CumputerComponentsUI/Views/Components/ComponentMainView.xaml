@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="CumputerComponentsUI.Views.Components.ComponentMainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CumputerComponentsUI.Views.Components"
+             mc:Ignorable="d" d:DesignWidth="400" Height="37.076">
+    <Grid>
+        <TextBlock x:Name="Name" HorizontalAlignment="Left" Margin="142,10,0,0" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top" RenderTransformOrigin="0.009,1.127"/>
+        <TextBlock x:Name="Vendor" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Path=Vendor}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Coast" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=Coast}" VerticalAlignment="Top" Margin="364,10,0,0"/>
+
+    </Grid>
+</UserControl>

@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ComputerComponents.Models;
-using ComputerComponents.Interfaces;
-using ComputerComponents.Analyzer;
+using CumputerComponentsUI.ViewModel;
+using CumputerComponentsUI.Views.Windows;
+using MotherboardModel = ComputerComponents.Models.Motherboard;
 
 namespace CumputerComponentsUI
 {
@@ -23,101 +24,59 @@ namespace CumputerComponentsUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Assembly assembly;
-
         public MainWindow()
         {
             InitializeComponent();
-            assembly = new Assembly();
 
-            using (ComputerComponentsEntities entities = new ComputerComponentsEntities())
-            {
-                MotherboardsList.ItemsSource = entities.Motherboards.ToList();
-                CPUsList.ItemsSource = entities.Processors.ToList();
-                MemoriesList.ItemsSource = entities.Memories.ToList();
-                GPUsList.ItemsSource = entities.GraphicalCards.ToList();
-                PowerSuppliesList.ItemsSource = entities.PowerSupplies.ToList();
-                FansList.ItemsSource = entities.Fans.ToList();
-                HDDsList.ItemsSource = entities.HDDs.ToList();
-                SSDsList.ItemsSource = entities.SSDs.ToList();
-            }
+            MotherboardView.DataContext = Assembly.Motherboard;
         }
 
-        private void MotherboardsList_DropDownClosed(object sender, EventArgs e)
+        private void MotherboardView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (MotherboardsList.SelectedItem is Motherboard)
-            {
-                assembly.Motherboard = (Motherboard)MotherboardsList.SelectedItem;
-                CheckAssembly();
-            }
+            MotherboardsList motherboards = new MotherboardsList();
+            motherboards.Show();
         }
 
-        private void CPUsList_DropDownClosed(object sender, EventArgs e)
+        private void CPUView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (CPUsList.SelectedItem is Processor)
-            {
-                assembly.Processor = (Processor)CPUsList.SelectedItem;
-                CheckAssembly();
-            }
+            CPUList cpus = new CPUList();
+            cpus.Show();
         }
 
-        private void MemoriesList_DropDownClosed(object sender, EventArgs e)
+        private void GPUView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (MemoriesList.SelectedItem is Memory)
-            {
-                assembly.Memory = (Memory)MemoriesList.SelectedItem;
-                CheckAssembly();
-            }
+            GPUList gpus = new GPUList();
+            gpus.Show();
         }
 
-        private void GPUsList_DropDownClosed(object sender, EventArgs e)
+        private void MemoryView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (GPUsList.SelectedItem is GraphicalCard)
-            {
-                assembly.GraphicalCard = (GraphicalCard)GPUsList.SelectedItem;
-                CheckAssembly();
-            }
+            MemoryList memories = new MemoryList();
+            memories.Show();
         }
 
-        private void PowerSuppliesList_DropDownClosed(object sender, EventArgs e)
+        private void PowerSupplyView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (PowerSuppliesList.SelectedItem is PowerSupply)
-            {
-                assembly.PowerSupply = (PowerSupply)PowerSuppliesList.SelectedItem;
-                CheckAssembly();
-            }
+            PowerSupplyList PSs = new PowerSupplyList();
+            PSs.Show();
         }
 
-        private void FansList_DropDownClosed(object sender, EventArgs e)
+        private void FanView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (FansList.SelectedItem is Fan)
-            {
-                assembly.Fan = (Fan)FansList.SelectedItem;
-                CheckAssembly();
-            }
+            FanList fans = new FanList();
+            fans.Show();
         }
 
-        private void HDDsList_DropDownClosed(object sender, EventArgs e)
+        private void HDDView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (HDDsList.SelectedItem is HDD)
-            {
-                assembly.HDD = (HDD)HDDsList.SelectedItem;
-                CheckAssembly();
-            }
+            HDDList hdds = new HDDList();
+            hdds.Show();
         }
 
-        private void SSDsList_DropDownClosed(object sender, EventArgs e)
+        private void SSDView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (SSDsList.SelectedItem is SSD)
-            {
-                assembly.SSD = (SSD)SSDsList.SelectedItem;
-                CheckAssembly();
-            }
-        }
-
-        private void CheckAssembly()
-        {
-             Message.Text = assembly.AssemblyCompatibilityMessage();
+            SSDList ssds = new SSDList();
+            ssds.Show();
         }
     }
 }

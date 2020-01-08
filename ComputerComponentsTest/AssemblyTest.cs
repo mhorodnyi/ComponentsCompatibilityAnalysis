@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ComputerComponents.Analyzer;
+using CumputerComponentsUI.ViewModel;
 using ComputerComponents.Models;
 
 namespace ComputerComponentsTest
