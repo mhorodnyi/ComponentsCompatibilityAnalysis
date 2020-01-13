@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CumputerComponentsUI"
         xmlns:Components="clr-namespace:CumputerComponentsUI.Views.Components" x:Class="CumputerComponentsUI.MainWindow"
         mc:Ignorable="d"
-        Title="Computer Components Analyzer" Height="400" Width="450">
+        Title="Computer Components Analyzer" Height="400" Width="500">
     <Window.Resources>
         <Style x:Key="UCStyles" TargetType="UserControl">
             <Style.Triggers>
@@ -30,14 +30,14 @@
             <Label Content="HDD:" HorizontalAlignment="Left" Margin="10,946,0,0" VerticalAlignment="Top"/>
             <Label Content="SSD:" HorizontalAlignment="Left" Margin="10,1102,0,0" VerticalAlignment="Top"/>
 
-            <Components:Motherboard HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" x:Name="MotherboardView" Style="{StaticResource UCStyles}" MouseLeftButtonUp="MotherboardView_MouseLeftButtonUp"/>
-            <Components:CPU HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" x:Name="CPUView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="CPUView_MouseLeftButtonUp"/>
-            <Components:GPU HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" x:Name="GPUView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="GPUView_MouseLeftButtonUp"/>
-            <Components:Memory HorizontalAlignment="Left" Margin="10,509,0,0" VerticalAlignment="Top" x:Name="MemoryView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="MemoryView_MouseLeftButtonUp"/>
-            <Components:PowerSupply HorizontalAlignment="Left" Margin="10,665,0,0" VerticalAlignment="Top" x:Name="PowerSupplyView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="PowerSupplyView_MouseLeftButtonUp"/>
-            <Components:Fan HorizontalAlignment="Left" Margin="10,821,0,0" VerticalAlignment="Top" x:Name="FanView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="FanView_MouseLeftButtonUp"/>
-            <Components:HDD HorizontalAlignment="Left" Margin="10,977,0,0" VerticalAlignment="Top" x:Name="HDDView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="HDDView_MouseLeftButtonUp"/>
-            <Components:SSD HorizontalAlignment="Left" Margin="10,1133,0,0" VerticalAlignment="Top" Width="400" x:Name="SSDView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="SSDView_MouseLeftButtonUp"/>
+            <Components:Motherboard HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" x:Name="MotherboardView" Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:CPU HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" x:Name="CPUView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:GPU HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" x:Name="GPUView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:Memory HorizontalAlignment="Left" Margin="10,509,0,0" VerticalAlignment="Top" x:Name="MemoryView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:PowerSupply HorizontalAlignment="Left" Margin="10,665,0,0" VerticalAlignment="Top" x:Name="PowerSupplyView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:Fan HorizontalAlignment="Left" Margin="10,821,0,0" VerticalAlignment="Top" x:Name="FanView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:HDD HorizontalAlignment="Left" Margin="10,977,0,0" VerticalAlignment="Top" x:Name="HDDView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
+            <Components:SSD HorizontalAlignment="Left" Margin="10,1133,0,0" VerticalAlignment="Top" x:Name="SSDView"  Style="{StaticResource UCStyles}" MouseLeftButtonUp="ChooseComponent"/>
         </Grid>
     </ScrollViewer>
 </Window>

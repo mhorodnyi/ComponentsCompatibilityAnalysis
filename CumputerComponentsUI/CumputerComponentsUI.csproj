@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\Assembly.cs" />
     <Compile Include="ViewModel\ComponentsCollections.cs" />
+    <Compile Include="ViewModel\EventsHelper.cs" />
     <Compile Include="Views\Components\ComponentMainView.xaml.cs">
       <DependentUpon>ComponentMainView.xaml</DependentUpon>
     </Compile>
